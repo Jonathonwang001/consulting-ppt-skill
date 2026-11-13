@@ -9,7 +9,7 @@
 
 **English**
 
-`consulting-ppt-skill` is a Manus Agent Skill that encodes the design language, narrative logic, visual vocabulary, and content standards of the world's leading consulting firms — McKinsey, Roland Berger, Deloitte, and BCG. Once loaded, it enables any AI agent to produce presentation materials that match the quality and aesthetic of actual consulting deliverables.
+`consulting-ppt-skill` is a consulting PPT Skill that encodes the design language, narrative logic, visual vocabulary, and content standards of the world's leading consulting firms — McKinsey, Roland Berger, Deloitte, and BCG. Once loaded, it enables any AI agent to produce presentation materials that match the quality and aesthetic of actual consulting deliverables.
 
 **中文**
 
