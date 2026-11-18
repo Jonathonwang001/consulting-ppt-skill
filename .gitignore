@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.env
+.env.*
+.learnings/
+source-review/
+baseline-skill/
+state.json
+*.ppt
+*.pptx
+*.pdf
+*.emf
+*.png
+*.jpg
+*.jpeg

@@ -1,0 +1,43 @@
+{
+  "schema_version": "2.0",
+  "project": "示例：渠道策略研究，不含真实客户结论",
+  "brand": {"preset": "deloitte-inspired", "primary": "#231F20", "accent": "#86BC25"},
+  "slides": [
+    {
+      "id": "S1",
+      "type": "analysis",
+      "title": "拟从门店与电商的单位经济差异验证渠道扩张优先级",
+      "reader_decision": "确认渠道研究范围与验证问题",
+      "relation": "comparison",
+      "visual_unit": "同口径双栏对比",
+      "metric_unit": "定性研究设计，暂无定量数据",
+      "evidence_status": "hypothesis",
+      "sources": ["项目设计示意，非实际研究结论"],
+      "icons": [
+        {"concept": "门店", "semantic_role": "entity_label", "family": "flat-monochrome", "placement": "左栏标题旁", "asset_source": "待从授权素材选择"},
+        {"concept": "电商", "semantic_role": "entity_label", "family": "flat-monochrome", "placement": "右栏标题旁", "asset_source": "待从同一授权素材选择"}
+      ],
+      "no_icon_reason": "",
+      "geometry": {"quantitative": false, "proportional": false, "basis": "等大结构，不暗示规模"},
+      "key_message": "先验证渠道盈利与资源约束，不把扩张速度当作唯一标准"
+    },
+    {
+      "id": "S2",
+      "type": "work_plan",
+      "title": "按关键问题设置工作流并以客户评审确认阶段交付物",
+      "reader_decision": "确认研究资源、Owner与评审节奏",
+      "relation": "time",
+      "visual_unit": "待协商日期的工作流甘特图",
+      "metric_unit": "日期待客户确认",
+      "evidence_status": "illustrative",
+      "sources": ["示意工作计划，不构成排期承诺"],
+      "icons": [],
+      "no_icon_reason": "责任与时间信息优先，图标没有额外识别价值",
+      "geometry": {"quantitative": false, "proportional": false, "basis": "日期未确定，示意不按比例"},
+      "key_message": "排期依数据可得性与客户资源确认后再确定"
+    }
+  ],
+  "question_workstream_map": [
+    {"question_id": "Q1", "question": "渠道扩张是否具备可持续单位经济？", "hypothesis": "渠道差异可能影响盈利，待验证", "method": "同口径单位经济分析与访谈交叉核验", "workstream": "渠道经济验证", "owner": "待客户确认项目负责人", "deliverable": "渠道对比模型与建议", "client_input": "按渠道拆分的经营数据与访谈资源", "checkpoint": "数据口径确认及阶段评审，日期待定"}
+  ]
+}
