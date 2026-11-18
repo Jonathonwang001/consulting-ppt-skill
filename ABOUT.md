@@ -2,18 +2,18 @@
 
 ## 中文
 
-**Consulting PPT Skill** 是由[@Jonathonwang001](https://github.com/Jonathonwang001)维护、供AI Agent复用的咨询Proposal与幻灯片内容设计方法。v2.0.0将客户决策、内容逻辑、Unit of Measure视觉表达单元、商务扁平化图标、真实指标与证据协同起来，强调结构化思考、客户定制和商业性冷淡风。
+**Consulting PPT Skill** 由[@Jonathonwang001](https://github.com/Jonathonwang001)维护，供AI Agent设计咨询Proposal、内部领导/投资部报告和战略工作材料。v2.1.0以阅读者任务组织内容，保留有效深度与风险反证，组合结构和数据证据，执行完整文本/零溢出/字体排版工程门槛。对外Proposal保留原三条说服主线，内部汇报不套获客逻辑。
 
-它不是在线PPT产品、官方咨询公司模板或已授权图标全集。麦肯锡深蓝、罗兰贝格酒红、德勤黑/炭灰/蓝灰且绿只点缀、BCG深绿为启发式项目预设；客户品牌优先。实际制作由宿主工具执行，语义与数据仍需审查。
+领导/客户认可框架、模板和可用案例图片优先；麦肯锡深蓝、罗兰贝格酒红、德勤炭灰/蓝灰且绿只点缀、BCG深绿为非官方启发预设。实际制作与最终渲染由宿主完成，规划和bbox脚本不代替事实/全页审查。本项目没有在线PPT产品、原图标全集或真实稿自动认证承诺。
 
-仓库原创规则、示例和脚本采用MIT许可；上传教学材料、图标原件、商标与私人客户数据未公开打包，也不因此重新授权。
+原创规则、示例、脚本MIT许可；源教材/图标/商标和客户私人数据不公开打包、不重新授权。
 
 ## English
 
-**Consulting PPT Skill**, maintained by [@Jonathonwang001](https://github.com/Jonathonwang001), is a reusable methodology for AI agents planning consulting proposals and slides. Version 2.0.0 connects client decisions, content relationships, visual units, flat business icons, real metrics and evidence. It emphasizes structured thinking, client tailoring and restrained business design.
+**Consulting PPT Skill**, maintained by [@Jonathonwang001](https://github.com/Jonathonwang001), supports AI agents planning proposals, internal executive/investment reports and strategy reviews. Version 2.1.0 adds reader-task routing, effective content depth, counterevidence, coordinated visual evidence and strict text/font/layout gates. Proposal persuasion remains available without being imposed on internal reporting.
 
-It is not an online presentation product, an official consulting-firm template or a licensed icon-library bundle. Firm-inspired palettes are non-official project presets; client branding comes first. Host tools create actual decks, with semantic and factual review still required.
+Approved leadership/client references take precedence over non-official firm-inspired palettes. Host tools create and render actual decks; planning and declared-bounds checks cannot replace factual and full-page review. No web product, proprietary icon bundle or automatic real-deck certification is provided.
 
-Original rules, examples and scripts are MIT-licensed. Source training decks, icon artwork, trademarks and confidential client material are not distributed or relicensed.
+Original rules, examples and scripts are MIT-licensed; source training material, icon artwork, trademarks and confidential client content are not distributed or relicensed.
 
-[README](README.md) · [Changelog / 版本历史](CHANGELOG.md) · [v2.0.0 Release Notes / 升级说明](releases/v2.0.0.md)
+[README](README.md) · [Changelog / 版本历史](CHANGELOG.md) · [v2.1.0 Release Notes / 升级说明](releases/v2.1.0.md)

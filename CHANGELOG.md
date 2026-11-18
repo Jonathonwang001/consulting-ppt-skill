@@ -1,5 +1,22 @@
 # 版本历史 / Changelog
 
+## v2.1.0 — 2026-11-18
+
+| 中文 | English |
+|---|---|
+| 新增内部领导/工作场景路由与阅读任务，避免泛化对外Proposal | Explicit internal executive/working routes and reader tasks |
+| 有效内容保留深度、同业、反证、风险和口径，复用领导批准参考 | Effective evidence depth, counterevidence and approved-reference reuse |
+| 多模块结构/图表组合共同支撑主阅读任务 | Coordinated composite visual evidence |
+| 完整文字、四边无溢出、标签安全区、字体/裁切/遮挡阻断与修复流程 | Release-blocking text, bounds, chart-label, font and clipping gates |
+| 2.1规划JSON、内部示例与布局指标检查器，2.0继续兼容 | Scene-aware planning and declared-bounds checker; 2.0 compatible |
+| 双语用户说明和迁移边界，真实稿与合成测试严格区分 | Bilingual migration notes and synthetic/actual-review separation |
+
+本版修订主流程适用范围和工程验收颗粒度，不推翻v2.0。原版本已有高管/渲染检查提及，不能称完全缺失；15字/60%/衬线等配额不恢复，项目排版契约和零溢出始终必需。未创建真实PPT或验证截图中的外部字典回归。
+
+This release refines scene boundaries and engineering gates, retaining v2.0 proposal/icon/framework capabilities. Word-count, area and serif quotas remain removed; project typography contracts and zero overflow remain mandatory. No actual deck or external-dictionary screenshot regression was certified.
+
+详见 / Details: [v2.1.0升级说明 / Release notes](releases/v2.1.0.md)。
+
 ## v2.0.0 — 2026-11-18
 
 ### 新增 / Added

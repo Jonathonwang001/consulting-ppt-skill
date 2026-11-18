@@ -7,6 +7,7 @@ from pathlib import Path
 from lint_slide_brief import lint
 
 EXAMPLE = json.loads((Path(__file__).resolve().parents[1] / "templates" / "slide-brief.example.json").read_text())
+INTERNAL = json.loads((Path(__file__).resolve().parents[1] / "templates" / "internal-report.example.json").read_text())
 
 
 class BriefTests(unittest.TestCase):
@@ -80,6 +81,61 @@ class BriefTests(unittest.TestCase):
                 case["slides"][0][key] = bad
                 self.assertTrue(lint(case)[0], key)
 
+    def test_internal_no_client_map(self):
+        self.assertNotIn("question_workstream_map", INTERNAL)
+        self.assertEqual(lint(INTERNAL), ([], []))
+
+    def test_legacy_20_compatible(self):
+        doc = copy.deepcopy(EXAMPLE)
+        doc["schema_version"] = "2.0"
+        for key in ("scenario", "audience", "reader_task", "reading_mode", "layout_contract"):
+            del doc[key]
+        for slide in doc["slides"]:
+            del slide["evidence_modules"]
+        self.assertEqual(lint(doc), ([], []))
+
+    def test_scene_fields_required(self):
+        for key in ("scenario", "audience", "reader_task", "reading_mode", "layout_contract"):
+            doc = copy.deepcopy(INTERNAL)
+            del doc[key]
+            self.assertTrue(lint(doc)[0], key)
+
+    def test_external_plan_still_needs_map(self):
+        doc = copy.deepcopy(EXAMPLE)
+        del doc["question_workstream_map"]
+        self.assertTrue(any("requires question_workstream_map" in x for x in lint(doc)[0]))
+
+    def test_internal_tracking_required(self):
+        doc = copy.deepcopy(INTERNAL)
+        del doc["slides"][1]["action_tracking"]
+        self.assertTrue(any("action_tracking" in x for x in lint(doc)[0]))
+
+    def test_composite_module_support(self):
+        doc = copy.deepcopy(INTERNAL)
+        del doc["slides"][0]["evidence_modules"][1]["supports"]
+        self.assertTrue(any("supports" in x for x in lint(doc)[0]))
+
+    def test_zero_overflow_policy_required(self):
+        doc = copy.deepcopy(INTERNAL)
+        doc["layout_contract"]["overflow_policy"] = "auto_shrink_or_clip"
+        self.assertTrue(any("zero_overflow" in x for x in lint(doc)[0]))
+
+    def test_mixed_requires_concrete_slide_scene(self):
+        doc = copy.deepcopy(INTERNAL)
+        doc["scenario"] = "mixed"
+        self.assertTrue(lint(doc)[0])
+        for slide in doc["slides"]:
+            slide["scenario"] = "internal_working"
+        self.assertFalse(lint(doc)[0])
+
+    def test_invalid_or_mismatched_scene_cannot_bypass_external_map(self):
+        for bad in ("typo", [], {}, None, "internal_executive", "mixed"):
+            with self.subTest(scene=bad):
+                doc = copy.deepcopy(EXAMPLE)
+                del doc["question_workstream_map"]
+                for slide in doc["slides"]:
+                    slide["scenario"] = bad
+                self.assertTrue(any("scenario" in item for item in lint(doc)[0]))
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,54 @@
+{
+  "schema_version": "2.1",
+  "project": "示意：内部投资部阶段核查，无真实项目结论",
+  "scenario": "internal_executive",
+  "audience": "投资部负责人和内部研究团队",
+  "reader_task": "理解证据缺口、监督核查状态并讨论下一阶段；本次不请求投资表决",
+  "reading_mode": "pre_read",
+  "layout_contract": {
+    "font_policy": "复用领导认可模板字体与字号；目标应用逐页复核",
+    "reference_policy": "示意假定有获批框架，实际任务需取得原件并确认版本",
+    "overflow_policy": "zero_overflow_full_text"
+  },
+  "brand": {"preset": "deloitte-inspired", "primary": "#231F20", "accent": "#86BC25"},
+  "slides": [
+    {
+      "id": "I1",
+      "type": "analysis",
+      "title": "当前材料尚不足验证系统价值与可复制交付",
+      "reader_task": "理解判断边界和可能推翻假设的证据",
+      "relation": "comparison",
+      "visual_unit": "价值机制与证据状态对照，协调双面板",
+      "evidence_modules": [
+        {"id": "mechanism", "kind": "定性作用机制图", "supports": "系统价值待验证的假设与责任边界"},
+        {"id": "evidence", "kind": "证据/反证/缺口表", "supports": "当前判断强度和下一阶段核查优先级"}
+      ],
+      "metric_unit": "定性示例；真实工况、验收和财务输入尚未提供",
+      "evidence_status": "illustrative",
+      "sources": ["人为设计的内部报告示例，非真实调查成果"],
+      "icons": [],
+      "no_icon_reason": "机制标签和证据状态表已能准确辨识，无需装饰",
+      "geometry": {"quantitative": false, "proportional": false, "basis": "等大定性框；不暗示规模/份额"}
+    },
+    {
+      "id": "I2",
+      "type": "work_plan",
+      "title": "下一阶段先补齐影响价值判断的系统侧证据",
+      "reader_task": "监督核查事项与未决责任，不编造排期或客户投入",
+      "relation": "time",
+      "visual_unit": "依赖事项与状态表，无已批准日期的甘特承诺",
+      "evidence_modules": [
+        {"id": "tracking", "kind": "事项状态与依赖表", "supports": "区分收集资料和核验完成，追踪下一检查点"}
+      ],
+      "action_tracking": [
+        {"issue": "核查系统效果与案例验收", "status": "示意：尚未取得必要原始资料", "owner": "拟由内部研究角色跟进，具体人员待确认", "next_checkpoint": "收到验收/测试原件后复核，日期待确认"}
+      ],
+      "metric_unit": "真实日期与工况待确认",
+      "evidence_status": "illustrative",
+      "sources": ["内部工作规划示意，非真实项目排程"],
+      "icons": [],
+      "no_icon_reason": "事项、责任与状态文字优先",
+      "geometry": {"quantitative": false, "proportional": false, "basis": "依赖关系示意，不按日期比例"}
+    }
+  ]
+}

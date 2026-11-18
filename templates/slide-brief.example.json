@@ -1,6 +1,15 @@
 {
-  "schema_version": "2.0",
+  "schema_version": "2.1",
   "project": "示例：渠道策略研究，不含真实客户结论",
+  "scenario": "external_proposal",
+  "audience": "拟议客户项目负责人",
+  "reader_task": "确认渠道研究范围、验证路径与合作安排",
+  "reading_mode": "pre_read",
+  "layout_contract": {
+    "font_policy": "客户批准模板优先，统一中文字体与字号层级",
+    "reference_policy": "示例尚未收到客户原模板，真实任务需取得并核对",
+    "overflow_policy": "zero_overflow_full_text"
+  },
   "brand": {"preset": "deloitte-inspired", "primary": "#231F20", "accent": "#86BC25"},
   "slides": [
     {
@@ -10,6 +19,9 @@
       "reader_decision": "确认渠道研究范围与验证问题",
       "relation": "comparison",
       "visual_unit": "同口径双栏对比",
+      "evidence_modules": [
+        {"id": "comparison", "kind": "渠道比较与验证问题表", "supports": "渠道扩张须检验单位经济和资源约束"}
+      ],
       "metric_unit": "定性研究设计，暂无定量数据",
       "evidence_status": "hypothesis",
       "sources": ["项目设计示意，非实际研究结论"],
@@ -28,6 +40,9 @@
       "reader_decision": "确认研究资源、Owner与评审节奏",
       "relation": "time",
       "visual_unit": "待协商日期的工作流甘特图",
+      "evidence_modules": [
+        {"id": "plan", "kind": "工作流与交付物映射", "supports": "研究路径与资源、评审节奏可对应"}
+      ],
       "metric_unit": "日期待客户确认",
       "evidence_status": "illustrative",
       "sources": ["示意工作计划，不构成排期承诺"],

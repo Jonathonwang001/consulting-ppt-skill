@@ -1,127 +1,109 @@
-# Consulting PPT Skill · v2.0.0
+# Consulting PPT Skill · v2.1.0
 
-**内容驱动的咨询级 Proposal 与幻灯片设计方法 / Content-driven consulting proposals and slide design**
+**阅读者视角、扎实内容与严谨版式 / Reader-aware, evidence-rich business presentations**
 
-[中文](#中文说明) · [English](#english-guide) · [About / 关于](ABOUT.md) · [版本历史 / Changelog](CHANGELOG.md) · [v2.0.0升级说明 / Release notes](releases/v2.0.0.md)
+[中文](#中文说明) · [English](#english-guide) · [About / 关于](ABOUT.md) · [版本历史](CHANGELOG.md) · [v2.1.0升级说明](releases/v2.1.0.md)
 
 ## 中文说明
 
-### 这是什么
+### 用途与本版升级
 
-一个供AI Agent加载的可复用Skill，沉淀用户提供的经典咨询模板、实际项目和Proposal教学材料中的结构化思考、客户定制、视觉表达与写作方法。采用顶级咨询公司启发的“商业性冷淡风”：逻辑先行、证据可核验、排版克制。它不是在线PPT产品，也不保证加载后自动达到任何机构的官方交付标准。
+供AI Agent复用的咨询Proposal、内部领导/投资部汇报、战略讨论及专题研究设计Skill。基础来自用户提供的经典咨询模板、真实项目、图标素材和Proposal教学材料；v2.1根据用户实际使用反馈补齐场景和排版规范，未声称重新逐页审查所有原始材料。
 
-**v2.0.0的核心升级：客户问题 → 内容关系 → 视觉表达单元 → 商务扁平化图标 → 真实指标与证据。** 页面类型只是结构选择之一；图标适时帮助对象识别，而非每页的必备装饰。
+v2.0已提到高管报告和渲染溢出检查，但主流程仍偏重对外Proposal。本版将阅读者任务、有效内容深度、组合证据与工程硬门槛分别落实，保留三层编码及原有框架/页面模块。
 
-### 适用场景
+| 维度 | v2.1.0执行规则 |
+|---|---|
+| 场景 | 先分对外Proposal、内部领导汇报、内部工作讨论和混合稿 |
+| 阅读任务 | 理解、比較、追踪、讨论或决定；内部信息汇报不编造票决 |
+| 内容 | 保留事实、机制、同业、反证、风险与口径，删无支撑重复 |
+| 可视化 | 一个主要阅读任务可用多个协调结构/数据/表格模块 |
+| 格式 | 字体/字号/网格/内边距有项目契约；零溢出/裁切/遮挡是硬门槛 |
+| 复用 | 领导/客户认可框架、图表、模板和可用案例图片优先 |
+| 完整交付 | 一个完整主稿中包含执行摘要、章级小结、论证和详细支撑 |
 
-适用于咨询Proposal、战略报告、项目建议书、中期/最终汇报、高管决策材料，以及问题树、价值链、甘特图、矩阵、漏斗、箭头等可视化设计。没有要求制作演示文稿时可以只产出内容大纲；真正制作PPT时由宿主Slides工具完成，支持情况下优先可编辑结构。
+取消15字、60%面积、强制衬线等普遍配额，不取消文字完整、字体正确和图表可读。无论内部还是外部，字形溢框、漏尾行、标签被裁、字体替代和关键证据被挡都须修复后再交付。内容草稿和规划脚本通过不能冒充真实PPT已验收。
 
-### 新版怎样工作
+### 内外场景分别组织
 
-| 层次 | 作用 | 示例 |
-|---|---|---|
-| 客户决策 | 说明读者需要确认什么 | 确认研究范围、选择战略方案 |
-| 关系编码 | 表达对象如何关联 | 并列框、问题树、泳道、甘特、矩阵 |
-| 实体编码 | 用图标帮助辨识业务对象 | 客户群、工厂、仓储、门店、访谈、交付物 |
-| 度量与证据 | 说明实际数量及可信边界 | 金额、人数、周、分母、来源、初步假设 |
+对外Proposal保留“处境/需求→验证与解决路径→相关胜任”，覆盖背景目标、问题树、初步思考、计划/交付物、经验团队和商务条款，并建立问题到工作流的闭环。
 
-这里沿用用户的“Unit of Measure”指视觉表达单元；统计数据的单位另行记录。并列杠杆不能乱画成因果链；通用人物头像不能冒充真实团队；图标大小不能暗示无依据的数量。数据密集、商务条款与精确对标页可以不用图标。
+内部领导汇报先匹配读者知识、职责、时间和阅读方式，以观点、证据/反证、影响、风险、取舍与关注事项组织；不强制客户投入、报价或服务方资历。内部进度/下一步页有事项/状态/Owner/节点，纯诊断页不硬加行动。现场讲述、会前阅读与专业核对是模式维度，不默认生成三份重复稿。
 
-Proposal从三条说服主线展开：理解客户处境与需求、知道如何解决、具有相关胜任能力。把背景与目标、问题树、初步思考、工作计划及交付物、相关案例与团队、商务条款串成闭环，**不强求每页或每个结论恰好三个子点**。
+组合表达可用机制+趋势/同业、矩阵+评价明细、价值链+环节指标、甘特+验收/风险。每模块声明支持哪条观点，口径和连接解释清楚。协调叠加不意味着图压图、双轴制造因果或堆无关框架。图标仅帮助对象识别，精确图表/表格可完全无图标。
 
-### 风格预设与客户定制
-
-客户要求和客户品牌优先。下面是项目用的启发式预设，不是各公司官方品牌手册，也不代表机构背书。
+### 风格与加载
 
 | 启发风格 | 主调 | 点缀 |
 |---|---|---|
-| McKinsey | 深海军蓝 `#002F6C` / `#1A3A5C` | 冷灰，少量强调色 |
-| Roland Berger | 酒红 `#8B0000` / `#A31621` | 深灰 |
-| Deloitte | 黑/炭灰 `#1A1A1A` / `#231F20`，可用深蓝/蓝灰 | `#86BC25`绿色仅作小面积点缀，**不是满版绿色** |
-| BCG | 深绿 `#006B3F` | 白与中性灰 |
+| McKinsey | 深海军蓝`#002F6C`/`#1A3A5C` | 冷灰 |
+| Roland Berger | 酒红`#8B0000`/`#A31621` | 深灰 |
+| Deloitte | 黑/炭灰`#1A1A1A`/`#231F20`或深蓝/蓝灰 | `#86BC25`仅小面积点缀，禁满版绿 |
+| BCG | 深绿`#006B3F` | 灰/白 |
 
-### 加载与使用
-
-将`SKILL.md`及`references/`、`scripts/`、`templates/`保留在同一`consulting-ppt`技能目录中，通过所用Agent的技能加载方式添加。Manus交付的技能卡可以用于添加到My Skills。其他Agent须自行适配工具能力；本仓库不提供通用一键PPT生成器。
+以上为非官方启发式项目预设，获批参考/品牌优先，不代表机构背书。将`SKILL.md`及同级`references/`、`scripts/`、`templates/`放在`consulting-ppt`目录，依宿主加载。实际制作依宿主Slides工具，支持时优先可编辑PPTX；本仓库没有在线产品或一键生成承诺。
 
 示例请求：
 
-> 请按consulting-ppt制作渠道策略研究Proposal。先写客户决策、问题树和工作流/交付物映射，再逐页选择视觉表达单元；商务图标仅用于识别渠道、角色和活动。数据不足标待验证；德勤启发风格以黑/蓝灰为主，绿只点缀。
+> 用consulting-ppt准备给内部投资部的会前阅读汇报，沿用领导批准框架。内容保留同业对比、反证、口径和风险；主观点可配协调图表与结构。一个完整主稿含执行摘要、章级小结和详细支撑。字号按模板，全部页面检查文字完整、四边溢出、图表标签、字体替代和遮挡。
 
-### 简报校验
+### 两类检查与边界
 
 ```bash
 python3 scripts/lint_slide_brief.py templates/slide-brief.example.json
+python3 scripts/lint_slide_brief.py templates/internal-report.example.json
 python3 scripts/test_lint_slide_brief.py
+python3 scripts/check_layout_metrics.py templates/layout-metrics.example.json --allow-synthetic
+python3 scripts/test_check_layout_metrics.py
 ```
 
-脚本仅用Python标准库，检查简报字段、图标意图、比例声明、来源声明和工作流闭环。示例是研究设计示意，**没有真实市场数据**。脚本不解析PPT、不判断MECE真实性、不核实来源，也不能替代页面渲染与可编辑性检查。修改项目数据时复制示例，不改示例源文件。
+仅Python标准库。规划JSON2.1新增场景、阅读模式、证据模块与布局政策；2.0仍兼容。规划脚本不解析PPT、不核实来源或真正MECE。布局脚本只检查提交的bbox与人工审阅声明，不测字形、不证明来源真实。默认拒绝合成输入用于真实验收；示例是合成算法测试，不含真实稿测量。没有可信实测时用真实全页/对象人工审阅，不能编bbox过检。
 
-### 学习材料与许可边界
+### 来源与许可
 
-v2新增学习：三套商务扁平化图标/人物/场景PPTX（实际8、8、86页）及High Profile Proposal教学PPTX（17页）。正文中的日期为2013年4月27日；文件名带2014，不能仅按文件名判断创作时间。观察与页码入口见[学习溯源](references/source-learning-map.md)。原版保留麦肯锡/罗兰贝格模板、德勤及实际项目、久谦和天天果园建议书等背景资料的学习基础，不把全部历史材料宣称本次逐页重审。
+v2学习三套商务图标/人物/场景材料（8/8/86页）与17页Proposal教学材料，详见[溯源](references/source-learning-map.md)。历史模板/案例学习保留，v2.1属于反馈驱动规范升级。
 
-**本仓库发布的是规则、示例和脚本，不发布用户上传的原PPTX、教材截屏、图标全集或私人客户数据。** 源素材的授权不因上传而变成可公开再分发。原文摘录限于必要说明；机构名称仅说明风格启发。仓库原创内容采用[MIT License](LICENSE)，第三方材料不受该许可证覆盖。
+原创规则、示例和脚本采用[MIT](LICENSE)。用户源PPT、教材截图、图标全集、商标、实际客户图片和私人资料不在公开包中，也不受该许可重新授权。外部dict-repo尚未在本任务接入，不声称同步字典台账或运行截图中的85/85回归。
 
 ## English guide
 
-### Purpose
+### Scope
 
-A reusable skill for AI agents, distilled from user-provided consulting templates, project materials and proposal training. It promotes structured thinking, client-specific persuasion, restrained visual design and traceable evidence. It is **not** an online presentation product, an official firm template or a guarantee of consulting-quality output.
+A reusable AI-agent skill for consulting proposals, internal executive/investment reports, working reviews and strategy discussions. Version 2.1 adds explicit audience-scenario routing, effective information depth, composite visual evidence and strict layout gates, while preserving v2.0's proposal logic, icon semantics and original consulting modules.
 
-**The v2.0.0 workflow is: client decision → content relationship → visual unit → business icon → measurement and evidence.** A slide type is a structural option, not the starting point of reasoning.
+The prior version mentioned executive reporting and overflow review, but its core workflow over-generalized proposal planning. Internal reports now start with reader responsibilities, knowledge, time and tasks: understanding, comparing, monitoring, discussing or deciding. A purely informational update need not invent an approval request, client inputs or sales credentials.
 
-### Core capabilities
+### Practical standards
 
-The skill retains the original consulting frameworks and 11 slide types / 11 visual modules. It adds semantic icon selection, relationship-driven layout decisions, planning-to-deliverable traceability, examples, source-learning notes and an executable planning linter.
+Preserve decision-relevant facts, mechanisms, peer comparisons, counterevidence, risks and assumptions. Remove unsupported repetition rather than stripping useful depth. Reuse leadership-approved structures, charts, templates and available case imagery. Default to one complete main artifact with an executive summary, chapter summaries and traceable detailed support.
 
-Visual units encode relationships; business icons identify entities; metric units describe real quantities. Use arrows only for defined sequence, dependency or evidenced causality. Use neutral avatars only for illustrative roles, not real staff identity. Keep icon families and optical weight consistent. Data-heavy charts, precise comparison tables and commercial terms may correctly use **no icons**.
+A page may use coordinated mechanism/trend, matrix/evaluation-table, value-chain/segment-metric or Gantt/acceptance modules. Each serves the main reader task and explains its evidence contribution, units and relationship. Composition is not physical obstruction or unrelated framework stacking. Business icons are optional entity labels; visual units encode relationships; metric units describe real quantities.
 
-Proposals address three persuasion goals: understand the client's situation, explain how to solve the problem, and demonstrate relevant capability. Link context, issue tree, initial hypotheses, work streams, owners, deliverables, client inputs and checkpoints. This is not a rule that every argument must contain exactly three points.
+Zero unintended text overflow, missing/clipped content, obscured chart labels, and unresolved font substitution are release-blocking issues. Font roles, spacing, margins and safe regions form a project-specific contract. Removing universal word-count, 60% area and mandatory-serif quotas does not relax engineering quality. Render and inspect every final-format page, and recheck after edits.
 
-### Usage and tools
+### Tools and limitations
 
-Load `SKILL.md` with its sibling `references/`, `scripts/` and `templates/` in a `consulting-ppt` skill directory. Installation depends on the host agent. For actual presentation creation, follow the host's Slides tooling; prefer native editable authoring where supported. This repository does not implement a universal one-click deck generator.
+Load the core with its sibling directories. Actual deck creation follows the host's Slides tools, using editable authoring where supported. Run the commands above for proposal/internal planning examples and regression tests. Planning schema 2.0 remains compatible; 2.1 adds scene, reader and evidence declarations.
 
-Example request:
+The layout checker consumes declared pixel bounds; it does not render PPTX, measure glyphs, authenticate provenance or establish text completeness. Synthetic fixtures are rejected by default for real acceptance and remain explicitly marked as tests even when allowed. Actual file acceptance requires credible rendering evidence plus content, font and layout review. No real deck was created or certified by this skill-update task.
 
-> Apply consulting-ppt to a channel strategy proposal. Start with the client decision and question-to-workstream map. Select each visual unit from the underlying relationship. Add flat business icons only when they improve entity recognition. Mark unverified assumptions. Use charcoal/blue-grey for the Deloitte-inspired preset, with green accents only.
-
-Run the commands in the Chinese section to validate a planning brief and run regression tests. The linter uses only Python's standard library; it does not validate actual PowerPoint layouts, factual accuracy, true MECE decomposition, licensing or editability.
-
-### Presets, sources and limitations
-
-Client instructions and brand assets override the illustrative firm-inspired presets. McKinsey-inspired uses deep navy; Roland Berger-inspired uses wine red; Deloitte-inspired uses black/charcoal or blue-grey with small green accents; BCG-inspired uses deep green. These are project presets, **not official brand specifications or endorsements**.
-
-New learning sources comprise three icon collections (8, 8 and 86 slides) and a 17-slide proposal-training file. The latter's internal cover is dated 27 April 2013 although its filename contains 2014. See the [source-learning map](references/source-learning-map.md) for scope and page references. No claim is made that all historical materials were re-reviewed in this release.
-
-Original skill documentation, examples and scripts are covered by the [MIT License](LICENSE). Uploaded source presentations, icon artwork, firm logos and confidential client materials are not included and are not relicensed. Do not publish them without explicit permission.
+Deep navy, wine red, charcoal/blue-grey with small Deloitte green accents, and deep green are non-official presets; approved reference assets override them. Original materials are MIT-licensed, not source decks, proprietary icons, trademarks or confidential client content. No external dictionary-repository update or screenshot regression score is claimed.
 
 ## Repository map / 仓库结构
 
-```text
-SKILL.md                              # Agent workflow / Agent核心流程
-README.md                             # Bilingual user guide / 双语说明
-CHANGELOG.md                          # Bilingual version history / 双语版本历史
-LICENSE                               # Original content only / 原创内容许可证
-releases/v2.0.0.md                     # Upgrade & migration notes / 升级与迁移说明
-references/
-  proposal-writing-standards.md        # Proposal persuasion and planning
-  content-visual-grammar.md            # Relationship-driven visual selection
-  business-icon-system.md              # Business icon semantics and consistency
-  slide-types.md                       # 11 structural slide options
-  visual-modules.md                    # 11 visual building blocks
-  consulting-frameworks.md             # Consulting framework reference
-  slide-content-template.md            # Storyline and slide briefs
-  design-examples.md                   # Input/output examples and counterexamples
-  source-learning-map.md               # Source scope and page traceability
-  quality-assurance.md                 # Human and machine review boundaries
-scripts/
-  lint_slide_brief.py                  # Planning structure checks
-  test_lint_slide_brief.py             # Regression tests
-templates/
-  slide-brief.example.json             # Illustrative planning example
-  version.json                        # Version metadata
-```
+Core: `SKILL.md`; user documentation: `README.md`, `ABOUT.md`, `CHANGELOG.md`, `releases/v2.1.0.md`; historical notes: `releases/v2.0.0.md`.
+
+References include the original proposal, visual grammar, icons, slide types, modules, frameworks, briefs, examples, sources and QA, plus:
+
+| New resource | Purpose |
+|---|---|
+| `references/audience-scenario-routing.md` | Reader task / scenario routing |
+| `references/internal-executive-reporting.md` | Effective internal report depth and structure |
+| `references/composite-visual-evidence.md` | Coordinated multi-module evidence |
+| `references/typography-layout-contract.md` | Font/layout contract, zero-overflow and repair |
+| `references/layout-metrics-contract.md` | Measured bbox input and checker limitations |
+| `templates/internal-report.example.json` | Internal planning example |
+| `templates/layout-metrics.example.json` | Synthetic geometry fixture, not a real deck |
+| `scripts/check_layout_metrics.py` / `test_check_layout_metrics.py` | Declared layout checks / regression |
 
 Maintained by / 维护者：[@Jonathonwang001](https://github.com/Jonathonwang001)

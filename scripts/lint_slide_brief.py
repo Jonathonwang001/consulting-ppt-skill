@@ -9,6 +9,8 @@ from pathlib import Path
 RELATIONS = {"parallel", "sequence", "causal", "hierarchy", "comparison", "conversion", "time", "ecosystem", "tradeoff", "quantitative", "navigation"}
 STATUSES = {"verified", "client_provided", "hypothesis", "illustrative"}
 STRUCTURAL = {"cover", "agenda", "divider", "appendix_index"}
+SCENARIOS = {"external_proposal", "internal_executive", "internal_working", "mixed"}
+READING_MODES = {"presented", "pre_read", "working"}
 
 
 def nonempty(value):
@@ -22,6 +24,29 @@ def lint(doc):
     for key in ("schema_version", "project"):
         if not nonempty(doc.get(key)):
             errors.append(f"root: missing {key}")
+    version = doc.get("schema_version")
+    if version not in ("2.0", "2.1"):
+        errors.append("root: supported schema_version is 2.0 or 2.1")
+    modern = version == "2.1"
+    scenario = doc.get("scenario", "external_proposal")
+    if modern:
+        if not isinstance(doc.get("scenario"), str) or scenario not in SCENARIOS:
+            errors.append("root: invalid or missing scenario")
+        for key in ("audience", "reader_task"):
+            if not nonempty(doc.get(key)):
+                errors.append(f"root: missing {key}")
+        mode = doc.get("reading_mode")
+        if not isinstance(mode, str) or mode not in READING_MODES:
+            errors.append("root: invalid or missing reading_mode")
+        contract = doc.get("layout_contract")
+        if not isinstance(contract, dict):
+            errors.append("root: missing layout_contract")
+        else:
+            for key in ("font_policy", "reference_policy"):
+                if not nonempty(contract.get(key)):
+                    errors.append(f"layout_contract: missing {key}")
+            if contract.get("overflow_policy") != "zero_overflow_full_text":
+                errors.append("layout_contract: require zero_overflow_full_text")
     slides = doc.get("slides")
     if not isinstance(slides, list) or not slides:
         return errors + ["root: slides must be a nonempty list"], warnings
@@ -31,9 +56,49 @@ def lint(doc):
         if not isinstance(slide, dict):
             errors.append(f"{at}: expected object")
             continue
-        for key in ("id", "type", "title", "reader_decision", "visual_unit", "metric_unit"):
+        for key in ("id", "type", "title", "visual_unit", "metric_unit"):
             if not nonempty(slide.get(key)):
                 errors.append(f"{at}: missing {key}")
+        if not nonempty(slide.get("reader_task")) and not nonempty(slide.get("reader_decision")):
+            errors.append(f"{at}: missing reader_task or legacy reader_decision")
+        slide_scenario = slide.get("scenario", scenario)
+        if modern:
+            if not isinstance(slide_scenario, str) or slide_scenario not in SCENARIOS - {"mixed"}:
+                errors.append(f"{at}: require a concrete valid per-slide scenario")
+            elif scenario != "mixed" and slide_scenario != scenario:
+                errors.append(f"{at}: scenario differs from project; use mixed project for scene overrides")
+        if modern:
+            modules = slide.get("evidence_modules", [])
+            if not isinstance(modules, list):
+                errors.append(f"{at}: evidence_modules must be a list")
+            elif not modules and slide.get("type") not in ("cover", "agenda", "divider", "appendix_index"):
+                errors.append(f"{at}: describe at least one evidence module")
+            else:
+                module_ids = set()
+                for j, module in enumerate(modules, 1):
+                    if not isinstance(module, dict):
+                        errors.append(f"{at}.module[{j}]: expected object")
+                        continue
+                    for key in ("id", "kind", "supports"):
+                        if not nonempty(module.get(key)):
+                            errors.append(f"{at}.module[{j}]: missing {key}")
+                    mid = module.get("id")
+                    if nonempty(mid):
+                        if mid in module_ids:
+                            errors.append(f"{at}: duplicate evidence module id {mid}")
+                        module_ids.add(mid)
+            if slide.get("type") == "work_plan" and slide_scenario in ("internal_executive", "internal_working"):
+                tracking = slide.get("action_tracking")
+                if not isinstance(tracking, list) or not tracking:
+                    errors.append(f"{at}: internal work_plan requires action_tracking")
+                else:
+                    for j, row in enumerate(tracking, 1):
+                        if not isinstance(row, dict):
+                            errors.append(f"{at}.tracking[{j}]: expected object")
+                            continue
+                        for key in ("issue", "status", "owner", "next_checkpoint"):
+                            if not nonempty(row.get(key)):
+                                errors.append(f"{at}.tracking[{j}]: missing {key}")
         sid = slide.get("id")
         if nonempty(sid):
             if sid in ids:
@@ -93,7 +158,8 @@ def lint(doc):
     if not isinstance(mapping, list):
         errors.append("root: question_workstream_map must be a list")
     else:
-        if any(isinstance(s, dict) and s.get("type") == "work_plan" for s in slides) and not mapping:
+        needs_map = any(isinstance(s, dict) and s.get("type") == "work_plan" and (not modern or s.get("scenario", scenario) == "external_proposal") for s in slides)
+        if needs_map and not mapping:
             errors.append("root: work_plan requires question_workstream_map")
         question_ids = set()
         for i, row in enumerate(mapping, 1):

@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "kind": "synthetic",
+    "artifact": "synthetic-fixture-only-not-a-rendered-deck",
+    "method": "hand-authored example pixel coordinates; no glyph measurement"
+  },
+  "slides": [
+    {
+      "id": "synthetic-slide-1",
+      "canvas": {"width": 1280, "height": 720},
+      "elements": [
+        {
+          "id": "background",
+          "kind": "shape",
+          "frame": {"x": 0, "y": 0, "width": 1280, "height": 720}
+        },
+        {
+          "id": "title",
+          "kind": "text",
+          "frame": {"x": 64, "y": 40, "width": 1152, "height": 88},
+          "content_box": {"x": 76, "y": 48, "width": 1128, "height": 72},
+          "ink_bounds": {"x": 80, "y": 54, "width": 600, "height": 48},
+          "intentionally_outside_canvas": false
+        },
+        {
+          "id": "plot",
+          "kind": "shape",
+          "frame": {"x": 100, "y": 200, "width": 850, "height": 340}
+        },
+        {
+          "id": "legend-outside-plot",
+          "kind": "chart_label",
+          "frame": {"x": 100, "y": 560, "width": 500, "height": 56},
+          "ink_bounds": {"x": 112, "y": 570, "width": 400, "height": 28},
+          "region": {"x": 80, "y": 180, "width": 1000, "height": 460}
+        }
+      ],
+      "review": {
+        "complete_text_checked": true,
+        "glyph_clipping_checked": true,
+        "font_substitution_checked": true,
+        "occlusion_checked": true
+      }
+    }
+  ]
+}
