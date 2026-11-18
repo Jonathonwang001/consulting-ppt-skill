@@ -1,6 +1,6 @@
 {
-  "version": "2.1.0",
+  "version": "2.1.1",
   "release_date": "2026-11-18",
-  "scope": "Reader-scenario routing, effective content depth, composite visual evidence and zero-overflow layout gates",
-  "compatibility": "Preserves v2.0 proposal, icon and framework rules; supports legacy 2.0 planning JSON and adds scene-aware 2.1 JSON; layout metrics require verified real rendering for actual acceptance"
+  "scope": "Holistic reader-purpose-evidence-medium-delivery design, non-proposal external reports, whole-document consistency and editable/A4 delivery",
+  "compatibility": "Planning schemas 2.0/2.1 preserved; 2.1 adds external_report; proposal closure and strict layout gates remain; no actual-slide certification by planning or synthetic tests"
 }

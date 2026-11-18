@@ -9,7 +9,7 @@ from pathlib import Path
 RELATIONS = {"parallel", "sequence", "causal", "hierarchy", "comparison", "conversion", "time", "ecosystem", "tradeoff", "quantitative", "navigation"}
 STATUSES = {"verified", "client_provided", "hypothesis", "illustrative"}
 STRUCTURAL = {"cover", "agenda", "divider", "appendix_index"}
-SCENARIOS = {"external_proposal", "internal_executive", "internal_working", "mixed"}
+SCENARIOS = {"external_proposal", "external_report", "internal_executive", "internal_working", "mixed"}
 READING_MODES = {"presented", "pre_read", "working"}
 
 
@@ -87,10 +87,10 @@ def lint(doc):
                         if mid in module_ids:
                             errors.append(f"{at}: duplicate evidence module id {mid}")
                         module_ids.add(mid)
-            if slide.get("type") == "work_plan" and slide_scenario in ("internal_executive", "internal_working"):
+            if slide.get("type") == "work_plan" and slide_scenario in ("external_report", "internal_executive", "internal_working"):
                 tracking = slide.get("action_tracking")
                 if not isinstance(tracking, list) or not tracking:
-                    errors.append(f"{at}: internal work_plan requires action_tracking")
+                    errors.append(f"{at}: non-proposal work_plan requires action_tracking")
                 else:
                     for j, row in enumerate(tracking, 1):
                         if not isinstance(row, dict):

@@ -1,8 +1,8 @@
-# Consulting PPT Skill · v2.1.0
+# Consulting PPT Skill · v2.1.1
 
 **阅读者视角、扎实内容与严谨版式 / Reader-aware, evidence-rich business presentations**
 
-[中文](#中文说明) · [English](#english-guide) · [About / 关于](ABOUT.md) · [版本历史](CHANGELOG.md) · [v2.1.0升级说明](releases/v2.1.0.md)
+[中文](#中文说明) · [English](#english-guide) · [About / 关于](ABOUT.md) · [版本历史](CHANGELOG.md) · [v2.1.1升级说明](releases/v2.1.1.md)
 
 ## 中文说明
 
@@ -12,9 +12,13 @@
 
 v2.0已提到高管报告和渲染溢出检查，但主流程仍偏重对外Proposal。本版将阅读者任务、有效内容深度、组合证据与工程硬门槛分别落实，保留三层编码及原有框架/页面模块。
 
-| 维度 | v2.1.0执行规则 |
+v2.1.1进一步统筹受众、用途、证据成熟度、媒介与交付约束。对外成果/研究/交流采用`external_report`，不是Proposal；对内也可能需要正式审议/说服。整稿故事线、章节信息预算、术语/单位/期间和色义先统一，再设计页面，不把逐页合格当作整稿合格。
+
+报告优先Markdown，演示优先可编辑PPTX，文字/节点/图表数据可改；地图按需配Mermaid，实际计算图表按需配CSV及所用Python源文件。直观成品为主入口，源码为支撑；PDF/PNG预览不替代编辑源。报告/打印版单独验收A4表格/分页，投屏不强改A4。合理重排标题/摘要、表格和栏宽消除无效留白，保留必要分组/呼吸，不堆满每页。
+
+| 维度 | v2.1执行规则 |
 |---|---|
-| 场景 | 先分对外Proposal、内部领导汇报、内部工作讨论和混合稿 |
+| 场景 | 按五维实际需求判断，再路由Proposal、对外非Proposal、内部领导/工作及混合稿 |
 | 阅读任务 | 理解、比較、追踪、讨论或决定；内部信息汇报不编造票决 |
 | 内容 | 保留事实、机制、同业、反证、风险与口径，删无支撑重复 |
 | 可视化 | 一个主要阅读任务可用多个协调结构/数据/表格模块 |
@@ -63,7 +67,7 @@ python3 scripts/test_check_layout_metrics.py
 
 v2学习三套商务图标/人物/场景材料（8/8/86页）与17页Proposal教学材料，详见[溯源](references/source-learning-map.md)。历史模板/案例学习保留，v2.1属于反馈驱动规范升级。
 
-原创规则、示例和脚本采用[MIT](LICENSE)。用户源PPT、教材截图、图标全集、商标、实际客户图片和私人资料不在公开包中，也不受该许可重新授权。外部dict-repo尚未在本任务接入，不声称同步字典台账或运行截图中的85/85回归。
+原创规则、示例和脚本采用[MIT](LICENSE)。用户源PPT、教材截图、图标全集、商标、实际客户图片和私人资料不在公开包中，也不受该许可重新授权。本仓库仅维护Skill，不依赖额外字典工程。
 
 ## English guide
 
@@ -72,6 +76,8 @@ v2学习三套商务图标/人物/场景材料（8/8/86页）与17页Proposal教
 A reusable AI-agent skill for consulting proposals, internal executive/investment reports, working reviews and strategy discussions. Version 2.1 adds explicit audience-scenario routing, effective information depth, composite visual evidence and strict layout gates, while preserving v2.0's proposal logic, icon semantics and original consulting modules.
 
 The prior version mentioned executive reporting and overflow review, but its core workflow over-generalized proposal planning. Internal reports now start with reader responsibilities, knowledge, time and tasks: understanding, comparing, monitoring, discussing or deciding. A purely informational update need not invent an approval request, client inputs or sales credentials.
+
+Version 2.1.1 separates audience, purpose, evidence maturity, medium and delivery constraints. The `external_report` route covers non-proposal results, research and exchanges without sales closure. Whole-document narrative, chapter information budgets and consistent terms, units, periods and visual semantics precede page styling. Prefer editable Markdown/PPTX, optional Mermaid/CSV/actually used Python sources, and a clear human-facing main artifact. Validate A4 print/report layouts separately from projection; remove purposeless whitespace without overpacking.
 
 ### Practical standards
 
@@ -87,11 +93,11 @@ Load the core with its sibling directories. Actual deck creation follows the hos
 
 The layout checker consumes declared pixel bounds; it does not render PPTX, measure glyphs, authenticate provenance or establish text completeness. Synthetic fixtures are rejected by default for real acceptance and remain explicitly marked as tests even when allowed. Actual file acceptance requires credible rendering evidence plus content, font and layout review. No real deck was created or certified by this skill-update task.
 
-Deep navy, wine red, charcoal/blue-grey with small Deloitte green accents, and deep green are non-official presets; approved reference assets override them. Original materials are MIT-licensed, not source decks, proprietary icons, trademarks or confidential client content. No external dictionary-repository update or screenshot regression score is claimed.
+Deep navy, wine red, charcoal/blue-grey with small Deloitte green accents, and deep green are non-official presets; approved reference assets override them. Original rules/examples/scripts are MIT-licensed, not source decks, proprietary icons, trademarks or confidential client content. This project maintains the skill itself, not a separate dictionary project.
 
 ## Repository map / 仓库结构
 
-Core: `SKILL.md`; user documentation: `README.md`, `ABOUT.md`, `CHANGELOG.md`, `releases/v2.1.0.md`; historical notes: `releases/v2.0.0.md`.
+Core: `SKILL.md`; user documentation: `README.md`, `ABOUT.md`, `CHANGELOG.md`, `releases/v2.1.1.md`; historical notes: `releases/v2.1.0.md`, `releases/v2.0.0.md`.
 
 References include the original proposal, visual grammar, icons, slide types, modules, frameworks, briefs, examples, sources and QA, plus:
 

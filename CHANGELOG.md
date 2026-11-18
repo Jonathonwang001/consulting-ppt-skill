@@ -1,5 +1,16 @@
 # 版本历史 / Changelog
 
+## v2.1.1 — 2026-11-18
+
+| 中文 | English |
+|---|---|
+| 五维需求统筹，内外不替代实际用途；新增对外非Proposal路由 | Five-dimensional brief and non-proposal external report route |
+| 整稿故事线、信息预算、口径/术语/色义一致；合理消除无效留白 | Whole-document narrative, information budget, consistency and useful whitespace |
+| 可编辑Markdown/PPTX与按需源文件，成品为主入口；A4与投屏分别验收 | Editable human-facing deliverables, optional sources and separate A4/projection checks |
+| 保留2.0/2.1 schema、Proposal闭环与工程底线；不扩展外部字典工程 | Preserve schema/proposal/layout gates; focus solely on the skill |
+
+详见 / Details: [v2.1.1升级说明 / Release notes](releases/v2.1.1.md)。本版按整体适用性补强现有核心/路由/QA，未新增重复Skill或真实PPT认证。
+
 ## v2.1.0 — 2026-11-18
 
 | 中文 | English |

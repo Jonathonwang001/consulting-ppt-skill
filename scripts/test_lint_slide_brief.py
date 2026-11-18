@@ -85,6 +85,22 @@ class BriefTests(unittest.TestCase):
         self.assertNotIn("question_workstream_map", INTERNAL)
         self.assertEqual(lint(INTERNAL), ([], []))
 
+    def test_external_report_no_proposal_map(self):
+        doc = copy.deepcopy(INTERNAL)
+        doc["scenario"] = "external_report"
+        for page in doc["slides"]:
+            page["scenario"] = "external_report"
+        self.assertEqual(lint(doc), ([], []))
+
+    def test_external_report_plan_needs_tracking_not_client_map(self):
+        doc = copy.deepcopy(INTERNAL)
+        doc["scenario"] = "external_report"
+        for page in doc["slides"]:
+            page["scenario"] = "external_report"
+        del doc["slides"][1]["action_tracking"]
+        self.assertTrue(any("action_tracking" in e for e in lint(doc)[0]))
+        self.assertFalse(any("requires question_workstream_map" in e for e in lint(doc)[0]))
+
     def test_legacy_20_compatible(self):
         doc = copy.deepcopy(EXAMPLE)
         doc["schema_version"] = "2.0"
@@ -129,7 +145,7 @@ class BriefTests(unittest.TestCase):
         self.assertFalse(lint(doc)[0])
 
     def test_invalid_or_mismatched_scene_cannot_bypass_external_map(self):
-        for bad in ("typo", [], {}, None, "internal_executive", "mixed"):
+        for bad in ("typo", [], {}, None, "internal_executive", "external_report", "mixed"):
             with self.subTest(scene=bad):
                 doc = copy.deepcopy(EXAMPLE)
                 del doc["question_workstream_map"]
